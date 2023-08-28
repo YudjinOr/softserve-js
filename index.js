@@ -32,4 +32,63 @@ if (validateAge >= 18) {
     console.log("You are too young");
 }*/
 
+const filterMostOfNumber = (numsArr) => {
+    let someArr = numsArr;
+    let biggestNumberOfEntries = 0;
 
+    const mostRepeatedNumberInArray = someArr.reduce(
+        (mostRepeatedNumberInArray, currentElement, currentIndex, array) => {
+            let numberOfEntriesForCurrentElement =
+                array.indexOf(currentElement) < currentIndex
+                    ? -1
+                    : array.filter((el) => el === currentElement).length;
+
+            if (numberOfEntriesForCurrentElement > biggestNumberOfEntries) {
+                biggestNumberOfEntries = numberOfEntriesForCurrentElement;
+                return currentElement;
+            } else {
+                return mostRepeatedNumberInArray;
+            }
+        }, someArr[0]
+    );
+
+    return (someArr = someArr.filter((el) => el !== mostRepeatedNumberInArray));
+}
+
+
+const triangleArea = (a, b, c) => {
+    const firstSideOfTriangle = a;
+    const secondSideOfTriangle = b;
+    const thirdSideOfTriangle = c;
+
+    const semiperimeterOfTriangle = 
+    (firstSideOfTriangle + secondSideOfTriangle + thirdSideOfTriangle) / 2;
+
+    const areaOfTriangle = Math.pow(
+        semiperimeterOfTriangle *
+          (semiperimeterOfTriangle - firstSideOfTriangle) *
+          (semiperimeterOfTriangle - secondSideOfTriangle) *
+          (semiperimeterOfTriangle - thirdSideOfTriangle),
+        1 / 2
+    );
+
+    if (Number.isNaN(areaOfTriangle) || areaOfTriangle === 0) {
+        return "Incorrect data";
+    } else {
+        return areaOfTriangle.toFixed(3);
+    }
+}
+
+
+
+/*const greetings = time => {
+    if (time >= 23 || time < 5) {
+        alert("Good night");
+    } else if (time >= 5 && time < 11) {
+        alert("Good morning");
+    } else if (time >=11 && time < 17) {
+        alert("Good afternoon");
+    } else if (time >= 17 && time < 23) {
+        alert("Good evening");
+    }
+}*/

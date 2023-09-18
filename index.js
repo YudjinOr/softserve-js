@@ -1,94 +1,54 @@
+// First topic, first task 
+/*const user = prompt ("Please, enter your name to login");
+const userEmail = prompt ("Insert your email address");
+const userPassword = prompt ("Enter your password"); 
+alert (`Dear ${user}, your email is ${userEmail}, your password is ${userPassword}`);*/
+
+// First topic, second task
+const secMin = 60;
+const minHour = 60;
+const oursDay = 24;
+const dayMonth = 30;
+const secH = secMin * minHour;
+const secD = secH * oursDay;
+const secM = secD * dayMonth;
+
+// First topic, third task
+//alert ("Hello, my name is Yudjin!");
+
+// First topic, fourth task
+// const isAdult = confirm ("Are you over 18 years old?");
+
+// First topic, fifth task 
+let betterPractice;
 const dataTypes = {
-    String: "String",
-    Number: 77,
-    Boolean: true,
-    Undefined: undefined,
-    Null: null,
-    Big_Int: 12345678901234567890n
+    String : "some string",
+    Number : 4,
+    Boolean : true,
+    Undefined : betterPractice, 
+    Null : null,
+    Big_Int : 1n
 };
 
-const secMin = 60;
-const minOur = 60;
-const secH = secMin * minOur;
-const ourDay = 24;
-const secD = secH * ourDay;
-let dayMon = 30;
-const secM = secD * dayMon;
+// Second topic, first task
 
-//const isAdult = confirm("Are you already 18 years old?");
-//alert(isAdult);
-
-/*let logIn = prompt("Write your login name, please.");
-let email = prompt("Write your email adress, please.");
-let password = prompt("Insert your password, please.");
-alert(`Dear ${logIn}, your email is ${email}, your password is ${password}`);*/
-//let message = `Dear ${logIn}, your email adress is ${email}, your password is ${password}.`;
-//alert(message);
-
-/*const validateAge = +prompt("Enter your age:");
-if (validateAge >= 18) { 
+// 1 step - write condition with "if" keyword, that if the age >= 18 -- console log - 1 case/
+// 2 step - if age < 18 -- console log - 2 case. 
+  const age = 17;
+/*if (age >= 18) {
     console.log("You are of legal age");
-} else {
+  } else {
     console.log("You are too young");
-}*/
+  }*/
 
-const filterMostOfNumber = (numsArr) => {
-    let someArr = numsArr;
-    let biggestNumberOfEntries = 0;
+  // additional way - use conditional operator - condition ? what will be if true : what will be if false
+age >= 18 ? console.log("You are of legal age") : console.log("You are too young");
 
-    const mostRepeatedNumberInArray = someArr.reduce(
-        (mostRepeatedNumberInArray, currentElement, currentIndex, array) => {
-            let numberOfEntriesForCurrentElement =
-                array.indexOf(currentElement) < currentIndex
-                    ? -1
-                    : array.filter((el) => el === currentElement).length;
+// Second topic, second task
 
-            if (numberOfEntriesForCurrentElement > biggestNumberOfEntries) {
-                biggestNumberOfEntries = numberOfEntriesForCurrentElement;
-                return currentElement;
-            } else {
-                return mostRepeatedNumberInArray;
-            }
-        }, someArr[0]
-    );
+// Step 1 -- to filter the array and find out the most often number
+const numsArr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5];
 
-    return (someArr = someArr.filter((el) => el !== mostRepeatedNumberInArray));
-}
+// Step 2 -- put this number into new array
+// Step 3 -- creat a new array without this number
 
-
-const triangleArea = (a, b, c) => {
-    const firstSideOfTriangle = a;
-    const secondSideOfTriangle = b;
-    const thirdSideOfTriangle = c;
-
-    const semiperimeterOfTriangle = 
-    (firstSideOfTriangle + secondSideOfTriangle + thirdSideOfTriangle) / 2;
-
-    const areaOfTriangle = Math.pow(
-        semiperimeterOfTriangle *
-          (semiperimeterOfTriangle - firstSideOfTriangle) *
-          (semiperimeterOfTriangle - secondSideOfTriangle) *
-          (semiperimeterOfTriangle - thirdSideOfTriangle),
-        1 / 2
-    );
-
-    if (Number.isNaN(areaOfTriangle) || areaOfTriangle === 0) {
-        return "Incorrect data";
-    } else {
-        return areaOfTriangle.toFixed(3);
-    }
-}
-
-
-
-/*const greetings = time => {
-    if (time >= 23 || time < 5) {
-        alert("Good night");
-    } else if (time >= 5 && time < 11) {
-        alert("Good morning");
-    } else if (time >=11 && time < 17) {
-        alert("Good afternoon");
-    } else if (time >= 17 && time < 23) {
-        alert("Good evening");
-    }
-}*/

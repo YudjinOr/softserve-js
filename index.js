@@ -48,7 +48,41 @@ age >= 18 ? console.log("You are of legal age") : console.log("You are too young
 
 // Step 1 -- to filter the array and find out the most often number
 const numsArr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5];
+const counter = numsArr.reduce(function(counter, counterNumber) {
+  if (!counter[counterNumber]) {
+    counter[counterNumber] = 1;
+  } else {
+    counter[counterNumber]++;
+  }
+  return counter; 
+},{});
+console.log(counter); 
 
-// Step 2 -- put this number into new array
+let mostOftenIteration = 0;
+for (const objectNumber in counter) {
+  if (counter[objectNumber] > mostOftenIteration) {
+    mostOftenIteration = counter[objectNumber];
+  }
+}
+const mostOftenNumber = []; 
+for (const objectNumber in counter) {
+  if (counter[objectNumber] === mostOftenIteration) {
+    mostOftenNumber.push(+objectNumber); // Step 2 -- put this number into new array
+  }
+}
+
 // Step 3 -- creat a new array without this number
+// const someNewArr = [];
+// for (const objectNumber in numsArr) {
+//   if (numsArr[objectNumber] !== mostOftenIteration) {
+//     someNewArr.push(+objectNumber);
+//   }
+// }
+// console.log(someNewArr);
 
+// product that the most saleable 
+
+const someNewArr = numsArr.filter(function(el) {
+  return el !== mostOftenNumber[0];
+});
+console.log(someNewArr);

@@ -55,34 +55,29 @@ const counter = numsArr.reduce(function(counter, counterNumber) {
     counter[counterNumber]++;
   }
   return counter; 
-},{});
-console.log(counter); 
+},{}); /*working with array using reduce method and return the velue like an object to variable that shows each number reiteration*/
 
 let mostOftenIteration = 0;
 for (const objectNumber in counter) {
   if (counter[objectNumber] > mostOftenIteration) {
-    mostOftenIteration = counter[objectNumber];
-  }
+    mostOftenIteration = counter[objectNumber];      /* Choosing the most often iteration*/
+  } 
 }
+
+// Step 2 -- put this number into new array
 const mostOftenNumber = []; 
 for (const objectNumber in counter) {
   if (counter[objectNumber] === mostOftenIteration) {
-    mostOftenNumber.push(+objectNumber); // Step 2 -- put this number into new array
+    mostOftenNumber.push(+objectNumber); 
   }
 }
 
 // Step 3 -- creat a new array without this number
-// const someNewArr = [];
-// for (const objectNumber in numsArr) {
-//   if (numsArr[objectNumber] !== mostOftenIteration) {
-//     someNewArr.push(+objectNumber);
-//   }
-// }
-// console.log(someNewArr);
-
-// product that the most saleable 
-
-const someNewArr = numsArr.filter(function(el) {
+// const someNewArr = numsArr.filter(function(el) {
+//   return el !== mostOftenNumber[0]; /*filtering first array and return elemnts wich are not "most often number" to a new array*/ 
+// });
+let someNewArr = [];
+someNewArr = numsArr.filter(function(el) {
   return el !== mostOftenNumber[0];
 });
-console.log(someNewArr);
+//Practical using -- for ex. searching the product that the most saleable. Could be?

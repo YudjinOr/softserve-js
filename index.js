@@ -73,11 +73,18 @@ for (const objectNumber in counter) {
 }
 
 // Step 3 -- creat a new array without this number
-// const someNewArr = numsArr.filter(function(el) {
-//   return el !== mostOftenNumber[0]; /*filtering first array and return elemnts wich are not "most often number" to a new array*/ 
-// });
 let someNewArr = [];
 someNewArr = numsArr.filter(function(el) {
   return el !== mostOftenNumber[0];
-});
+}); /*filtering first array and return elemnts wich are not "most often number" to a new array*/ 
 //Practical using -- for ex. searching the product that the most saleable. Could be?
+
+// Second topic third task
+// Create a new array and put inside fitered old array with help of a loop
+const numsArray = [13, 2, 4, 7, 12, 2, 4, 87, 26, 22, 44, 49, 122, 424, 43, 16];
+let someStrainedArr = [];
+for (const i in numsArray) {
+  if (numsArray[i] % 3 === 0 || numsArray[i] % 5 === 0 || numsArray[i] % 7 === 0 || numsArray[i] % 11 === 0 || numsArray[i] % 13 === 0) {
+    someStrainedArr.push(numsArray[i]);
+  }
+};

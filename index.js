@@ -88,3 +88,39 @@ for (const i in numsArray) {
     someStrainedArr.push(numsArray[i]);
   }
 };
+
+// Second topic, forth task
+const a = 2;
+const b = 2;
+const c = 3;
+
+const firstTriangleSide = a;
+const secondTriangleSide = b;
+const thirdTriangleSide = c;
+
+const trianglePerimetr = a + b + c;
+const triangleSemiPerimetr = trianglePerimetr / 2;
+let triangleArea = (triangleSemiPerimetr * 
+(triangleSemiPerimetr - firstTriangleSide) * 
+(triangleSemiPerimetr - secondTriangleSide) * 
+(triangleSemiPerimetr - thirdTriangleSide)) ** (1/2);
+
+/*Number.isNaN(triangleArea) || triangleArea === 0 ? 
+alarm("Incorrect data") : triangleArea = +triangleArea.toFixed(3);*/
+if (Number.isNaN(triangleArea) || triangleArea === 0) {
+  alarm("Incorrect data");
+} else {
+  triangleArea = +triangleArea.toFixed(3);
+}
+
+// Second topic, fifth task
+let time = 23;
+const greetings = time => {
+  time = 23;
+  switch(true) {
+    case (time >= 23 || time < 5) : return alert("Good night");
+    case (time >= 5 && time < 11) : return alert("Good morning");
+    case (time >= 11 && time < 17) : return alert("Good afternoon");
+    case (time >= 17 && time < 23) : return alert("Good evening");
+    }
+}

@@ -22,61 +22,61 @@ const secM = secD * dayMonth;
 // First topic, fifth task 
 let betterPractice;
 const dataTypes = {
-    String : "some string",
-    Number : 4,
-    Boolean : true,
-    Undefined : betterPractice, 
-    Null : null,
-    Big_Int : 1n
+  String: "some string",
+  Number: 4,
+  Boolean: true,
+  Undefined: betterPractice,
+  Null: null,
+  Big_Int: 1n
 };
 
 // Second topic, first task
 
 // 1 step - write condition with "if" keyword, that if the age >= 18 -- console log - 1 case/
 // 2 step - if age < 18 -- console log - 2 case. 
-  const age = 17;
+const age = 17;
 /*if (age >= 18) {
     console.log("You are of legal age");
   } else {
     console.log("You are too young");
   }*/
 
-  // additional way - use conditional operator - condition ? what will be if true : what will be if false
+// additional way - use conditional operator - condition ? what will be if true : what will be if false
 age >= 18 ? console.log("You are of legal age") : console.log("You are too young");
 
 // Second topic, second task
 
 // Step 1 -- to filter the array and find out the most often number
 const numsArr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5];
-const counter = numsArr.reduce(function(counter, counterNumber) {
+const counter = numsArr.reduce(function (counter, counterNumber) {
   if (!counter[counterNumber]) {
     counter[counterNumber] = 1;
   } else {
     counter[counterNumber]++;
   }
-  return counter; 
-},{}); /*working with array using reduce method and return the velue like an object to variable that shows each number reiteration*/
+  return counter;
+}, {}); /*working with array using reduce method and return the velue like an object to variable that shows each number reiteration*/
 
 let mostOftenIteration = 0;
 for (const objectNumber in counter) {
   if (counter[objectNumber] > mostOftenIteration) {
     mostOftenIteration = counter[objectNumber];      /* Choosing the most often iteration*/
-  } 
+  }
 }
 
 // Step 2 -- put this number into new array
-const mostOftenNumber = []; 
+const mostOftenNumber = [];
 for (const objectNumber in counter) {
   if (counter[objectNumber] === mostOftenIteration) {
-    mostOftenNumber.push(+objectNumber); 
+    mostOftenNumber.push(+objectNumber);
   }
 }
 
 // Step 3 -- creat a new array without this number
 let someNewArr = [];
-someNewArr = numsArr.filter(function(el) {
+someNewArr = numsArr.filter(function (el) {
   return el !== mostOftenNumber[0];
-}); /*filtering first array and return elemnts wich are not "most often number" to a new array*/ 
+}); /*filtering first array and return elemnts wich are not "most often number" to a new array*/
 //Practical using -- for ex. searching the product that the most saleable. Could be?
 
 // Second topic third task
@@ -90,37 +90,40 @@ for (const i in numsArray) {
 };
 
 // Second topic, forth task
-const a = 2;
-const b = 2;
-const c = 3;
 
-const firstTriangleSide = a;
-const secondTriangleSide = b;
-const thirdTriangleSide = c;
+const triangleArea = (a, b, c) => {
+  // Code here
+  const firstTriangleSide = a;
+  const secondTriangleSide = b;
+  const thirdTriangleSide = c;
 
-const trianglePerimetr = a + b + c;
-const triangleSemiPerimetr = trianglePerimetr / 2;
-let triangleArea = (triangleSemiPerimetr * 
-(triangleSemiPerimetr - firstTriangleSide) * 
-(triangleSemiPerimetr - secondTriangleSide) * 
-(triangleSemiPerimetr - thirdTriangleSide)) ** (1/2);
+  const trianglePerimetr = a + b + c;
+  const triangleSemiPerimetr = trianglePerimetr / 2;
+  let triangleArea = (triangleSemiPerimetr *
+    (triangleSemiPerimetr - firstTriangleSide) *
+    (triangleSemiPerimetr - secondTriangleSide) *
+    (triangleSemiPerimetr - thirdTriangleSide)) ** (1 / 2);
 
-/*Number.isNaN(triangleArea) || triangleArea === 0 ? 
-alarm("Incorrect data") : triangleArea = +triangleArea.toFixed(3);*/
-if (Number.isNaN(triangleArea) || triangleArea === 0) {
-  alarm("Incorrect data");
-} else {
-  triangleArea = +triangleArea.toFixed(3);
+  // return Number.isNaN(triangleArea) || triangleArea === 0
+  //   ? "Incorrect data"
+  //   : +triangleArea.toFixed(3);
+  if (Number.isNaN(triangleArea) || triangleArea === 0) {
+    return "Incorrect data";
+  } else {
+    return +triangleArea.toFixed(3);
+  }
 }
 
 // Second topic, fifth task
 let time = 23;
 const greetings = time => {
-  time = 23;
-  switch(true) {
-    case (time >= 23 || time < 5) : return alert("Good night");
-    case (time >= 5 && time < 11) : return alert("Good morning");
-    case (time >= 11 && time < 17) : return alert("Good afternoon");
-    case (time >= 17 && time < 23) : return alert("Good evening");
-    }
+  switch (true) {
+    case (time >= 23 || time < 5): return alert("Good night");
+    case (time >= 5 && time < 11): return alert("Good morning");
+    case (time >= 11 && time < 17): return alert("Good afternoon");
+    case (time >= 17 && time < 23): return alert("Good evening");
+  }
 }
+
+
+

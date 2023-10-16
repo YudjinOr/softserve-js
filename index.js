@@ -125,5 +125,55 @@ const greetings = time => {
   }
 }
 
+//test
+const arr = [5, 3, 4, 5, 6, 7, 3];
+const newArr = [4, 6, 9, 9, 3, 2, 4, 5];
+function compact(arr) {
+    let uniqueValues = [];
+    for (const i of arr) {
+        if (!uniqueValues.includes(i)) {
+            uniqueValues.push(i);
+        }
+    }
+    return uniqueValues;
+}
+// const arr2 = compact(newArr);
+// console.log(arr2);
+
+//test2
+function createArray(start, end) {
+  const countingNumbers = [];
+  for (let i = start; i <= end; i++) {
+      countingNumbers.push(i);
+  }
+  return countingNumbers;
+}
+// let arr1 = createArray(2, 9);
+// console.log(arr1);
+
+//test3 
+function repeatedNumbers(a, b) {
+  let numbersCollector = [];
+  let counter = 1;
+  for (let i = a; i <= b; i++) {
+      for (let repeat = 0; repeat < counter; repeat++) {
+        numbersCollector.push(i);
+      }
+      counter++;
+  }
+  return console.log(numbersCollector);
+}
+
+//test4
+function randArray(k) {
+  const randomNumbersArr = [];
+  for (let i = 0; i < k; i++) {
+      const createRandomNumbers = Math.floor(Math.random() * 500) + 1;
+      randomNumbersArr.push(createRandomNumbers);
+  }
+  return randomNumbersArr;
+}
+// const arr3 = randArray(5);
+// console.log(arr3);
 
 

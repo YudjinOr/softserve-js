@@ -125,55 +125,44 @@ const greetings = time => {
   }
 }
 
-//test
-const arr = [5, 3, 4, 5, 6, 7, 3];
-const newArr = [4, 6, 9, 9, 3, 2, 4, 5];
-function compact(arr) {
-    let uniqueValues = [];
-    for (const i of arr) {
-        if (!uniqueValues.includes(i)) {
-            uniqueValues.push(i);
-        }
-    }
-    return uniqueValues;
-}
-// const arr2 = compact(newArr);
-// console.log(arr2);
 
-//test2
-function createArray(start, end) {
-  const countingNumbers = [];
-  for (let i = start; i <= end; i++) {
-      countingNumbers.push(i);
+// Fourth topic, first task
+// const arr = [1, 2, 3, 4, 5, 6, 7];
+function sumSliceArray(arr, first, second) {
+  const sum = arr[first - 1] + arr[second - 1];
+  if (isNaN(first) || isNaN(second)) {
+    throw new TypeError("First or second value not a number");
+  } else if (first < 1 || second < 1 || first >= arr.length || second >= arr.length) {
+    throw new RangeError("Inserted numbers are out of range");
   }
-  return countingNumbers;
-}
-// let arr1 = createArray(2, 9);
-// console.log(arr1);
-
-//test3 
-function repeatedNumbers(a, b) {
-  let numbersCollector = [];
-  let counter = 1;
-  for (let i = a; i <= b; i++) {
-      for (let repeat = 0; repeat < counter; repeat++) {
-        numbersCollector.push(i);
-      }
-      counter++;
-  }
-  return console.log(numbersCollector);
+  return sum;
 }
 
-//test4
-function randArray(k) {
-  const randomNumbersArr = [];
-  for (let i = 0; i < k; i++) {
-      const createRandomNumbers = Math.floor(Math.random() * 500) + 1;
-      randomNumbersArr.push(createRandomNumbers);
+// try {
+//   let result = sumSliceArray(arr, "three", 5);
+//   console.log(result);
+// } catch (error) {
+//   console.log(error.name);
+//   console.log(error.message);
+// }
+
+// Fourth topic, second task
+function checkAge() {
+  const name = prompt("Insert user name");
+  const age = prompt("Insert your age");
+  if (age < 18 || age > 70) {
+    throw new RangeError;
+  } else if (isNaN(age)) {
+    throw new TypeError;
   }
-  return randomNumbersArr;
+  const status = prompt("Insert your status");
+  if (status !== "admin" && status !== "moderator" && status !== "user") {
+    throw new EvalError;
+  } else if (status === null || status === "" || name === null || name === "" || age === null || age === "") {
+    throw new Error("The field is empty!");
+  }
+  return alert("You can watch a movie!");
 }
-// const arr3 = randArray(5);
-// console.log(arr3);
+
 
 
